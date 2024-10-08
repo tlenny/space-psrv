@@ -3,6 +3,7 @@ import time
 from fastapi import FastAPI
 
 from src.q7 import Api
+from src.zi import Api as Api2
 
 app = FastAPI()
 
@@ -10,6 +11,7 @@ VERSION = '1.0.0'
 START_TIME = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(time.time()))
 
 app.include_router(Api.router)
+app.include_router(Api2.router)
 
 
 @app.get("/")
